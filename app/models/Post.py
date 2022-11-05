@@ -13,4 +13,5 @@ class Post(Base):
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     user = relationship('User')
     comments = relationship('Comment', cascade='all,delete')
+    votes = relationship('Vote', cascade='all,delete')
 
