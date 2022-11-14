@@ -17,7 +17,7 @@ def get_db():
     g.db = Session()
     return g.db
 
-def init_db():
+def init_db(app):
   Base.metadata.create_all(engine)
   app.teardown_appcontext(close_db)
 
