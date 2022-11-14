@@ -5,6 +5,12 @@ import sys
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 
+@bp.route('/users/logout', methods=['POST'])
+def logout():
+    # remove session variables
+    session.clear()
+    return '', 204
+
 @bp.route('/users', methods=['POST'])
 def signup():
 
